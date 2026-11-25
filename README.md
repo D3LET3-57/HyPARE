@@ -5,7 +5,6 @@ parallel MPNN message passing with node-level GRU memory through a learned gate.
 The implementation follows the CLRS encode–process–decode protocol and is
 evaluated on CLRS BFS and DFS.
 
-**Members:** Member 1, Member 2, Member 3
 
 ## Results at a glance
 
@@ -70,32 +69,6 @@ off late in the algorithm, when long-range computation is most needed. HyPARE's
 advantage peaks at 24–32 nodes and narrows at 48–64 nodes. Hint accuracy is
 high early and decays late, consistent with error compounding.
 
-## Repository layout
-
-```text
-repo-root/
-  src/                         CLRS adapters, models, training loops
-  scripts/train_bfs.py         BFS training
-  scripts/train_clrs.py        Any-algorithm training (used for DFS)
-  scripts/diagnose_dfs.py      Length sweep, hint curves, gate curves
-  scripts/make_presentation_assets.py
-  scripts/pdf_to_pptx.py       PDF-to-PPTX export with embedded GIF
-  tests/                       Pipeline and spec regression tests
-  results/                     Per-seed JSON results and diagnostics
-  demo/                        Live inference script, checkpoint, examples, recording guide
-  presentation/                Slides (PDF/PPTX), architecture diagram, figures/tables
-  report/                      Two-column report
-  requirements.txt
-```
-
-## Environment
-
-The experiments used PyTorch 2.7.1 on a single NVIDIA RTX 6000 Ada GPU. On this
-machine, the working environment is:
-
-- Python: `/home2/home/chakilam_sai/dl/claude/.venv/bin/python`
-- CLRS package: `/home2/home/chakilam_sai/clrs` (must be importable)
-
 Check the setup:
 
 ```bash
@@ -146,57 +119,6 @@ Regenerate all figures and tables:
 ```bash
 python scripts/make_presentation_assets.py
 ```
-
-The result JSON files are the source of truth. `scripts/make_presentation_assets.py`
-reads them and writes `presentation/summary.json`, all figures, and all LaTeX
-tables. The only shipped checkpoint is the small DFS demo checkpoint under
-`demo/checkpoints/`; training checkpoints are not shipped.
-
-## Live inference demo
-
-The demo loads the included DFS HyPARE checkpoint and animates the model rollout
-step by step on a fixed CLRS graph. It begins with the ground-truth input graph
-and the ground-truth DFS discovery order, then switches to the prediction.
-CLRS fixes the start node and neighbour order, so this is one canonical DFS;
-other valid DFS traversals also exist.
-
-Live window:
-
-```bash
-python demo/inference_demo.py --live --delay 0.75
-```
-
-Fallback animation and still frame:
-
-```bash
-python demo/inference_demo.py --save-gif demo/inference_demo.gif \
-  --save-frame demo/demo_frame.png
-```
-
-See `demo/RECORDING.md` for screen-recording instructions and the optional
-64-node OOD run. `demo/make_examples.py` renders a three-example overview of
-canonical DFS instances (`demo/examples_overview.png` and
-`demo/examples_overview.gif`).
-
-The PPTX contains animated GIFs on the Live Inference, More DFS Examples, and
-OOD Prediction slides; play those slides in Slide Show mode.
-
-## Artifacts
-
-- `demo/` (live inference script, checkpoint, GIF/MP4, still frame, recording guide)
-- `demo/examples_overview.png` (three canonical DFS examples)
-- `demo/examples_overview.gif` (animated cycle through the three examples)
-- `demo/inference_demo_ood.gif` (64-node OOD prediction, seed 0)
-- `demo/ood_prediction.gif` (additional 64-node OOD prediction, seed 1)
-- `demo/demo_frame_ood.png` (OOD still used on the slide)
-- `presentation/` (slide deck PDF/PPTX, figures, generated tables)
-- `presentation/hypare_final_deck.pptx` (embedded animated inference GIF)
-- `presentation/figures/architecture.pdf` (standalone architecture diagram)
-- `presentation/architecture_diagram.tex` (standalone TikZ source)
-- `report/` (two-column report PDF)
-- `presentation/summary.json`
-- `results/v5_*.json`
-
 ## Limitations
 
 - Three seeds only; DFS variance is large and the gain is preliminary.
