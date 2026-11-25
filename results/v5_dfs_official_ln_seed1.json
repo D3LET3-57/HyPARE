@@ -1,0 +1,332 @@
+{
+  "config": {
+    "algorithm": "dfs",
+    "architectures": [
+      "mpnn"
+    ],
+    "steps": 10000,
+    "batch_size": 32,
+    "hidden_dim": 128,
+    "learning_rate": 0.001,
+    "teacher_forcing": 0.5,
+    "use_ln": true,
+    "random_pos": false,
+    "eval_every": 500,
+    "test_every": 0,
+    "train_length": 16,
+    "val_length": 16,
+    "test_length": 64,
+    "train_samples": 1000,
+    "val_samples": 32,
+    "test_samples": 32,
+    "seeds": [
+      1
+    ],
+    "device": "cuda",
+    "output": "/home2/home/chakilam_sai/dl/hypare_v4/results/v5_dfs_official_ln_seed1.json",
+    "checkpoint_dir": "/home2/home/chakilam_sai/dl/hypare_v4/checkpoints_v5/official_ln",
+    "log_file": null,
+    "gate_init": -2.0,
+    "smoke": false
+  },
+  "runs": {
+    "mpnn": {
+      "1": {
+        "best_valid": 1.0,
+        "valid": {
+          "output_accuracy": 0.998046875,
+          "hint_accuracy": 0.9995524754500819,
+          "gate_mean": null,
+          "loss": 0.0325639545917511,
+          "hint_loss": 0.026402797549962997,
+          "output_loss": 0.006161157973110676
+        },
+        "test": {
+          "output_accuracy": 0.1201171875,
+          "hint_accuracy": 0.5742792699540549,
+          "gate_mean": null,
+          "loss": 54.022743225097656,
+          "hint_loss": 46.236671447753906,
+          "output_loss": 7.786070823669434
+        },
+        "test_ood": 0.1201171875,
+        "test_hint": 0.5742792699540549,
+        "parameters": 534670,
+        "seconds": 3479.68487906456,
+        "history": [
+          {
+            "step": 500,
+            "train_loss": 0.015814391896128654,
+            "valid": {
+              "output_accuracy": 1.0,
+              "hint_accuracy": 0.9997954173486089,
+              "gate_mean": null,
+              "loss": 0.01891355961561203,
+              "hint_loss": 0.01779237389564514,
+              "output_loss": 0.001121186069212854
+            },
+            "test": null
+          },
+          {
+            "step": 1000,
+            "train_loss": 0.003261855337768793,
+            "valid": {
+              "output_accuracy": 1.0,
+              "hint_accuracy": 0.9999232815057283,
+              "gate_mean": null,
+              "loss": 0.0045004491694271564,
+              "hint_loss": 0.00436605978757143,
+              "output_loss": 0.00013438938185572624
+            },
+            "test": null
+          },
+          {
+            "step": 1500,
+            "train_loss": 0.0014607349876314402,
+            "valid": {
+              "output_accuracy": 1.0,
+              "hint_accuracy": 1.0,
+              "gate_mean": null,
+              "loss": 0.0010381471365690231,
+              "hint_loss": 0.000992239685729146,
+              "output_loss": 4.590743992594071e-05
+            },
+            "test": null
+          },
+          {
+            "step": 2000,
+            "train_loss": 0.006909795105457306,
+            "valid": {
+              "output_accuracy": 1.0,
+              "hint_accuracy": 1.0,
+              "gate_mean": null,
+              "loss": 0.00067455496173352,
+              "hint_loss": 0.0006568419048562646,
+              "output_loss": 1.7713044144329615e-05
+            },
+            "test": null
+          },
+          {
+            "step": 2500,
+            "train_loss": 0.0002282241330249235,
+            "valid": {
+              "output_accuracy": 1.0,
+              "hint_accuracy": 1.0,
+              "gate_mean": null,
+              "loss": 0.0002301354252267629,
+              "hint_loss": 0.00022205477580428123,
+              "output_loss": 8.08065124147106e-06
+            },
+            "test": null
+          },
+          {
+            "step": 3000,
+            "train_loss": 0.0006940274033695459,
+            "valid": {
+              "output_accuracy": 1.0,
+              "hint_accuracy": 1.0,
+              "gate_mean": null,
+              "loss": 0.000336673780111596,
+              "hint_loss": 0.00033428194001317024,
+              "output_loss": 2.3918541955936234e-06
+            },
+            "test": null
+          },
+          {
+            "step": 3500,
+            "train_loss": 0.0003381562128197402,
+            "valid": {
+              "output_accuracy": 1.0,
+              "hint_accuracy": 1.0,
+              "gate_mean": null,
+              "loss": 0.00026571552734822035,
+              "hint_loss": 0.00026297877775505185,
+              "output_loss": 2.736753685894655e-06
+            },
+            "test": null
+          },
+          {
+            "step": 4000,
+            "train_loss": 0.0003286816063337028,
+            "valid": {
+              "output_accuracy": 1.0,
+              "hint_accuracy": 1.0,
+              "gate_mean": null,
+              "loss": 0.0002840215456672013,
+              "hint_loss": 0.0002826667041517794,
+              "output_loss": 1.3548366268878453e-06
+            },
+            "test": null
+          },
+          {
+            "step": 4500,
+            "train_loss": 0.0028306751046329737,
+            "valid": {
+              "output_accuracy": 1.0,
+              "hint_accuracy": 1.0,
+              "gate_mean": null,
+              "loss": 0.0012982077896595001,
+              "hint_loss": 0.00128539081197232,
+              "output_loss": 1.2816960406780709e-05
+            },
+            "test": null
+          },
+          {
+            "step": 5000,
+            "train_loss": 0.0012793183559551835,
+            "valid": {
+              "output_accuracy": 1.0,
+              "hint_accuracy": 1.0,
+              "gate_mean": null,
+              "loss": 0.0007090908475220203,
+              "hint_loss": 0.0006887104827910662,
+              "output_loss": 2.038033926510252e-05
+            },
+            "test": null
+          },
+          {
+            "step": 5500,
+            "train_loss": 0.00018304963305126876,
+            "valid": {
+              "output_accuracy": 1.0,
+              "hint_accuracy": 1.0,
+              "gate_mean": null,
+              "loss": 0.00027105966000817716,
+              "hint_loss": 0.0002651836257427931,
+              "output_loss": 5.876042905583745e-06
+            },
+            "test": null
+          },
+          {
+            "step": 6000,
+            "train_loss": 0.00021608509996440262,
+            "valid": {
+              "output_accuracy": 1.0,
+              "hint_accuracy": 1.0,
+              "gate_mean": null,
+              "loss": 0.00023879302898421884,
+              "hint_loss": 0.00023467525898013264,
+              "output_loss": 4.117765001865337e-06
+            },
+            "test": null
+          },
+          {
+            "step": 6500,
+            "train_loss": 0.00013786720228381455,
+            "valid": {
+              "output_accuracy": 1.0,
+              "hint_accuracy": 1.0,
+              "gate_mean": null,
+              "loss": 0.00012442204752005637,
+              "hint_loss": 0.00011954642104683444,
+              "output_loss": 4.875621016253717e-06
+            },
+            "test": null
+          },
+          {
+            "step": 7000,
+            "train_loss": 0.00016477557073812932,
+            "valid": {
+              "output_accuracy": 1.0,
+              "hint_accuracy": 1.0,
+              "gate_mean": null,
+              "loss": 0.00014699257735628635,
+              "hint_loss": 0.00014098484825808555,
+              "output_loss": 6.007731826684903e-06
+            },
+            "test": null
+          },
+          {
+            "step": 7500,
+            "train_loss": 0.00018368609016761184,
+            "valid": {
+              "output_accuracy": 1.0,
+              "hint_accuracy": 1.0,
+              "gate_mean": null,
+              "loss": 0.0001693316880846396,
+              "hint_loss": 0.00016492490249220282,
+              "output_loss": 4.406779225973878e-06
+            },
+            "test": null
+          },
+          {
+            "step": 8000,
+            "train_loss": 0.00014835389447398484,
+            "valid": {
+              "output_accuracy": 1.0,
+              "hint_accuracy": 1.0,
+              "gate_mean": null,
+              "loss": 0.00012116770085413009,
+              "hint_loss": 0.00011239714513067156,
+              "output_loss": 8.77055663295323e-06
+            },
+            "test": null
+          },
+          {
+            "step": 8500,
+            "train_loss": 0.00034808658529073,
+            "valid": {
+              "output_accuracy": 1.0,
+              "hint_accuracy": 1.0,
+              "gate_mean": null,
+              "loss": 0.00025551486760377884,
+              "hint_loss": 0.00025383365573361516,
+              "output_loss": 1.6812255125842057e-06
+            },
+            "test": null
+          },
+          {
+            "step": 9000,
+            "train_loss": 0.01020614244043827,
+            "valid": {
+              "output_accuracy": 0.994140625,
+              "hint_accuracy": 0.9995908346972177,
+              "gate_mean": null,
+              "loss": 0.09056244790554047,
+              "hint_loss": 0.022923661395907402,
+              "output_loss": 0.06763878464698792
+            },
+            "test": null
+          },
+          {
+            "step": 9500,
+            "train_loss": 0.0008129701600410044,
+            "valid": {
+              "output_accuracy": 1.0,
+              "hint_accuracy": 1.0,
+              "gate_mean": null,
+              "loss": 0.0005877547664567828,
+              "hint_loss": 0.000520485220476985,
+              "output_loss": 6.726951687596738e-05
+            },
+            "test": null
+          },
+          {
+            "step": 10000,
+            "train_loss": 0.005186301656067371,
+            "valid": {
+              "output_accuracy": 1.0,
+              "hint_accuracy": 0.9996803396072013,
+              "gate_mean": null,
+              "loss": 0.010487482883036137,
+              "hint_loss": 0.009757326915860176,
+              "output_loss": 0.0007301559089682996
+            },
+            "test": null
+          }
+        ],
+        "checkpoint": "/home2/home/chakilam_sai/dl/hypare_v4/checkpoints_v5/official_ln/dfs_mpnn_seed1.pt",
+        "log_file": "/home2/home/chakilam_sai/dl/hypare_v4/logs/v4_dfs_mpnn_seed1.log"
+      }
+    }
+  },
+  "summary": {
+    "mpnn": {
+      "test_mean": 0.1201171875,
+      "test_std": 0.0,
+      "test_scores": [
+        0.1201171875
+      ]
+    }
+  }
+}

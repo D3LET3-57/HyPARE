@@ -1,0 +1,45 @@
+{
+  "config": {
+    "architectures": [
+      "hypare"
+    ],
+    "steps": 10000,
+    "batch_size": 32,
+    "hidden_dim": 128,
+    "learning_rate": 0.001,
+    "teacher_forcing": 0.5,
+    "use_ln": true,
+    "random_pos": true,
+    "eval_every": 50,
+    "seeds": [
+      2
+    ],
+    "device": "cuda",
+    "output": "/home2/home/chakilam_sai/dl/hypare_v4/results/v5_bfs_hypare_seed2.json",
+    "checkpoint_dir": "/home2/home/chakilam_sai/dl/hypare_v4/checkpoints_v5/bfs",
+    "smoke": false,
+    "resume": false,
+    "lr_schedule": "none",
+    "weight_decay": 0.0,
+    "gate_init": -2.0
+  },
+  "runs": {
+    "hypare": {
+      "2": {
+        "val": 1.0,
+        "test_ood": 0.99951171875,
+        "parameters": 521220,
+        "seconds": 353.4929504394531
+      }
+    }
+  },
+  "summary": {
+    "hypare": {
+      "test_mean": 0.99951171875,
+      "test_std": 0.0,
+      "test_scores": [
+        0.99951171875
+      ]
+    }
+  }
+}
