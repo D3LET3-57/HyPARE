@@ -1,0 +1,17 @@
+\begin{tabular}{lcc}
+\toprule
+Model & DFS OOD (\%) & Seeds \\
+\midrule
+\multicolumn{3}{l}{\emph{Matched protocol (ours, 3 seeds)}} \\
+MPNN & 12.45 $\pm$ 2.66 & 16.21, 10.35, 10.79 \\
+MPNN+GRU & 9.68 $\pm$ 5.21 & 16.89, 4.79, 7.37 \\
+HyPARE & 19.43 $\pm$ 6.09 & 18.55, 27.29, 12.45 \\
+\addlinespace
+\multicolumn{3}{l}{\emph{Published context (CLRS paper, different implementation)}} \\
+MPNN & 6.54 $\pm$ 0.51 & -- \\
+PGN & 8.71 $\pm$ 0.24 & -- \\
+GAT & 11.78 $\pm$ 2.04 & -- \\
+Memnet & 13.36 $\pm$ 1.61 & -- \\
+Deep Sets & 7.44 $\pm$ 0.73 & -- \\
+\bottomrule
+\end{tabular}
